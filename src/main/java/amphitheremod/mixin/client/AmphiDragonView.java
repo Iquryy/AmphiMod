@@ -24,11 +24,11 @@ public abstract class AmphiDragonView {
             if(amphimod$somekindadragon == null) {
                 amphimod$somekindadragon = new EntityFireDragon(Minecraft.getMinecraft().world);
                 switch (ConfigHandler.amphiDragonStage){
-                    case 1: amphimod$somekindadragon.setAgeInDays(1);
-                    case 2: amphimod$somekindadragon.setAgeInDays(25);
-                    case 3: amphimod$somekindadragon.setAgeInDays(50);
-                    case 4: amphimod$somekindadragon.setAgeInDays(75);
-                    case 5: amphimod$somekindadragon.setAgeInDays(100);
+                    case 1: amphimod$somekindadragon.setAgeInDays(1); break;
+                    case 2: amphimod$somekindadragon.setAgeInDays(25); break;
+                    case 3: amphimod$somekindadragon.setAgeInDays(50); break;
+                    case 4: amphimod$somekindadragon.setAgeInDays(75); break;
+                    case 5: amphimod$somekindadragon.setAgeInDays(100); break;
                 }
             }
             return amphimod$somekindadragon;
