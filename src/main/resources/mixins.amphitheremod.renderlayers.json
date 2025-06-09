@@ -5,17 +5,10 @@
   "compatibilityLevel": "JAVA_8",
   "target": "@env(DEFAULT)",
   "minVersion": "0.8",
-  "mixins": [
-    "common.CanMateWithMixin",
-    "common.CustomNBTMixin",
-    "common.FeedingMixin",
-    "common.SetVariantMixin"
-  ],
   "injectors": {
     "maxShiftBy": 10
   },
   "client": [
-    "client.RenderLayersMixin",
-    "client.RenderVariantsMixin"
+    "client.RenderAmphiLayers"
   ]
 }
