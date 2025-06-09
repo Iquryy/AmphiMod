@@ -53,16 +53,12 @@ dependencies {
     implementation "org.spongepowered:mixin:${mixin_version}"
     annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
     implementation "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
+    annotationProcessor "io.github.llamalad7:mixinextras-common:${mixin_extras_version}"
 
     implementation fg.deobf("curse.maven:fermiumbooter-${fermiumbooter_version}")
 
-    implementation fg.deobf("curse.maven:ice_and_fire-${ice_and_fire}")
-    implementation fg.deobf("curse.maven:llibarary-${llibarary}")
-
-    //implementation files("libs/renameme_lib.jar")
-
-
-
+    implementation fg.deobf("curse.maven:ice_and_fire-${ice_and_fire_version}")
+    implementation fg.deobf("curse.maven:llibarary-${llibrary_version}")
 }
 
 mixin {

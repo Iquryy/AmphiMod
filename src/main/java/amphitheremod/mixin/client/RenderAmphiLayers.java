@@ -1,6 +1,9 @@
 package amphitheremod.mixin.client;
 
-import amphitheremod.RenderAmphithereLayers;
+import amphitheremod.client.LayerAmphithereEyes;
+import amphitheremod.client.LayerAmphithereGender;
+import amphitheremod.client.LayerAmphithereMouth;
+import amphitheremod.config.ConfigHandler;
 import com.github.alexthe666.iceandfire.client.render.entity.RenderAmphithere;
 import com.github.alexthe666.iceandfire.entity.EntityAmphithere;
 import net.minecraft.client.renderer.entity.RenderLiving;
@@ -11,15 +14,16 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(RenderAmphithere.class)
-public abstract class RenderLayersMixin extends RenderLiving<EntityAmphithere> {
-    public RenderLayersMixin(RenderManager renderManagerIn) {
+public abstract class RenderAmphiLayers extends RenderLiving<EntityAmphithere> {
+    public RenderAmphiLayers(RenderManager renderManagerIn) {
         super(renderManagerIn, null, 0F);
     }
 
     @Inject(method = "<init>(Lnet/minecraft/client/renderer/entity/RenderManager;)V", at = @At("RETURN"), remap = false)
     private void addGlowingLayer(RenderManager renderManager, CallbackInfo ci) {
-        this.addLayer(new RenderAmphithereLayers.LayerAmphithereEyes(this));
-        this.addLayer(new RenderAmphithereLayers.LayerGender(this));
-        this.addLayer(new RenderAmphithereLayers.LayerMouth(this));
+        this.addLayer(new LayerAmphithereEyes(this));
+        if(ConfigHandler.mixins.amphisWithGender)
+            this.addLayer(new LayerAmphithereGender(this));
+        this.addLayer(new LayerAmphithereMouth(this));
     }
 }

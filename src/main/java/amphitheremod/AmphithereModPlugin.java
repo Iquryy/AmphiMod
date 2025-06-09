@@ -1,16 +1,20 @@
 package amphitheremod;
 
-import java.util.Map;
+import amphitheremod.config.ConfigHandler;
 import fermiumbooter.FermiumRegistryAPI;
-import org.spongepowered.asm.launch.MixinBootstrap;
 import net.minecraftforge.fml.relauncher.IFMLLoadingPlugin;
+import org.spongepowered.asm.launch.MixinBootstrap;
+
+import java.util.Map;
 
 @IFMLLoadingPlugin.MCVersion("1.12.2")
-public class MixinPlugin implements IFMLLoadingPlugin {
+public class AmphithereModPlugin implements IFMLLoadingPlugin {
 
-	public MixinPlugin() {
+	public AmphithereModPlugin() {
 		MixinBootstrap.init();
-		FermiumRegistryAPI.enqueueMixin(true, "mixins.amphitheremod.mixin.json");
+
+		FermiumRegistryAPI.registerAnnotatedMixinConfig(ConfigHandler.class, null);
+		FermiumRegistryAPI.enqueueMixin(true, "mixins.amphitheremod.renderlayers.json");
 	}
 
 	@Override
