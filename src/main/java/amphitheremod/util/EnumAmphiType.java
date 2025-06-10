@@ -77,6 +77,7 @@ public enum EnumAmphiType {
         PURPLE
     }
 
+    // Gonna add another way to get skeleton amphi
     public static boolean nameIsSkeleton(String name){
         return name.equals("s") || name.equals("S") || name.equals("w") || name.equals("W");
     }

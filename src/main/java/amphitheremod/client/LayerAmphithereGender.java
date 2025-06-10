@@ -20,7 +20,7 @@ public class LayerAmphithereGender extends AbstractAmphithereLayer {
 
     @Override protected ResourceLocation getTextureToBind(EntityAmphithere amphithere) {
         if (!(amphithere instanceof IAmphithereData)) return EMPTY;
-        if (EnumAmphiType.nameIsSkeleton(amphithere.getCustomNameTag())) return EMPTY;
+        //if (EnumAmphiType.nameIsSkeleton(amphithere.getCustomNameTag())) return EMPTY;
 
         IAmphithereData data = (IAmphithereData) amphithere;
         int amphiVariant = amphithere.getVariant();
