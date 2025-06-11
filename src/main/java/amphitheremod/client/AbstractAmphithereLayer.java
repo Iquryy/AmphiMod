@@ -5,6 +5,10 @@ import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.layers.LayerRenderer;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -34,6 +38,13 @@ public abstract class AbstractAmphithereLayer implements LayerRenderer<EntityAmp
         this.renderer.getMainModel().render(amphithere, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch, scale);
         GlStateManager.disableBlend();
         GlStateManager.popMatrix();
+    }
+
+    @Mod.EventHandler
+    public void init(FMLInitializationEvent event) {
+        if (FMLLaunchHandler.side() == Side.CLIENT) {
+            MinecraftForge.EVENT_BUS.register(new ColorizedEntityRender());
+        }
     }
 
     @Override public boolean shouldCombineTextures() {

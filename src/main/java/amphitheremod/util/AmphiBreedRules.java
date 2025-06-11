@@ -53,6 +53,92 @@ public class AmphiBreedRules {
     }
 }
 
+/*java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:1.8.0_51]
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192) ~[?:1.8.0_51]
+	at net.minecraft.util.Util.func_181617_a(Util.java:48) [h.class:?]
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:723) [MinecraftServer.class:?]
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668) [MinecraftServer.class:?]
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:279) [chd.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_51]
+Caused by: java.lang.NullPointerException
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.wrapOperation$zzh000$amphiMod_createChildWithOtherVariants(EntityAmphithere.java:1166) ~[EntityAmphithere.class:2.1.7]
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.func_90011_a(EntityAmphithere.java:874) ~[EntityAmphithere.class:2.1.7]
+	at net.minecraft.entity.EntityAgeable.func_184645_a(EntityAgeable.java:45) ~[vd.class:?]
+	at net.minecraft.entity.passive.EntityAnimal.func_184645_a(SourceFile:141) ~[zv.class:?]
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.func_184645_a(EntityAmphithere.java:149) ~[EntityAmphithere.class:2.1.7]
+	at net.minecraft.entity.EntityLiving.func_184230_a(EntityLiving.java:1414) ~[vq.class:?]
+	at net.minecraft.entity.player.EntityPlayer.func_190775_a(EntityPlayer.java:1199) ~[aed.class:?]
+	at net.minecraft.network.NetHandlerPlayServer.func_147340_a(NetHandlerPlayServer.java:1075) ~[pa.class:?]
+	at net.minecraft.network.play.client.CPacketUseEntity.func_148833_a(SourceFile:69) ~[li.class:?]
+	at net.minecraft.network.play.client.CPacketUseEntity.func_148833_a(SourceFile:13) ~[li.class:?]
+	at net.minecraft.network.PacketThreadUtil$1.run(PacketThreadUtil.java:22) ~[hv$1.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_51]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_51]
+	at net.minecraft.util.Util.func_181617_a(Util.java:47) ~[h.class:?]
+	... 5 more
+[15:18:22] [Server thread/FATAL]: Error executing task
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:1.8.0_51]
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192) ~[?:1.8.0_51]
+	at net.minecraft.util.Util.func_181617_a(Util.java:48) [h.class:?]
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:723) [MinecraftServer.class:?]
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668) [MinecraftServer.class:?]
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:279) [chd.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_51]
+Caused by: java.lang.NullPointerException
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.wrapOperation$zzh000$amphiMod_createChildWithOtherVariants(EntityAmphithere.java:1166) ~[EntityAmphithere.class:2.1.7]
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.func_90011_a(EntityAmphithere.java:874) ~[EntityAmphithere.class:2.1.7]
+	at net.minecraft.entity.EntityAgeable.func_184645_a(EntityAgeable.java:45) ~[vd.class:?]
+	at net.minecraft.entity.passive.EntityAnimal.func_184645_a(SourceFile:141) ~[zv.class:?]
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.func_184645_a(EntityAmphithere.java:149) ~[EntityAmphithere.class:2.1.7]
+	at net.minecraft.entity.EntityLiving.func_184230_a(EntityLiving.java:1414) ~[vq.class:?]
+	at net.minecraft.entity.player.EntityPlayer.func_190775_a(EntityPlayer.java:1199) ~[aed.class:?]
+	at net.minecraft.network.NetHandlerPlayServer.func_147340_a(NetHandlerPlayServer.java:1075) ~[pa.class:?]
+	at net.minecraft.network.play.client.CPacketUseEntity.func_148833_a(SourceFile:69) ~[li.class:?]
+	at net.minecraft.network.play.client.CPacketUseEntity.func_148833_a(SourceFile:13) ~[li.class:?]
+	at net.minecraft.network.PacketThreadUtil$1.run(PacketThreadUtil.java:22) ~[hv$1.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_51]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_51]
+	at net.minecraft.util.Util.func_181617_a(Util.java:47) ~[h.class:?]
+	... 5 more
+[15:18:23] [Server thread/FATAL]: Error executing task
+java.util.concurrent.ExecutionException: java.lang.NullPointerException
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:1.8.0_51]
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192) ~[?:1.8.0_51]
+	at net.minecraft.util.Util.func_181617_a(Util.java:48) [h.class:?]
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:723) [MinecraftServer.class:?]
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668) [MinecraftServer.class:?]
+	at net.minecraft.server.integrated.IntegratedServer.func_71217_p(IntegratedServer.java:279) [chd.class:?]
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526) [MinecraftServer.class:?]
+	at java.lang.Thread.run(Thread.java:745) [?:1.8.0_51]
+Caused by: java.lang.NullPointerException
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.wrapOperation$zzh000$amphiMod_createChildWithOtherVariants(EntityAmphithere.java:1166) ~[EntityAmphithere.class:2.1.7]
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.func_90011_a(EntityAmphithere.java:874) ~[EntityAmphithere.class:2.1.7]
+	at net.minecraft.entity.EntityAgeable.func_184645_a(EntityAgeable.java:45) ~[vd.class:?]
+	at net.minecraft.entity.passive.EntityAnimal.func_184645_a(SourceFile:141) ~[zv.class:?]
+	at com.github.alexthe666.iceandfire.entity.EntityAmphithere.func_184645_a(EntityAmphithere.java:149) ~[EntityAmphithere.class:2.1.7]
+	at net.minecraft.entity.EntityLiving.func_184230_a(EntityLiving.java:1414) ~[vq.class:?]
+	at net.minecraft.entity.player.EntityPlayer.func_190775_a(EntityPlayer.java:1199) ~[aed.class:?]
+	at net.minecraft.network.NetHandlerPlayServer.func_147340_a(NetHandlerPlayServer.java:1075) ~[pa.class:?]
+	at net.minecraft.network.play.client.CPacketUseEntity.func_148833_a(SourceFile:69) ~[li.class:?]
+	at net.minecraft.network.play.client.CPacketUseEntity.func_148833_a(SourceFile:13) ~[li.class:?]
+	at net.minecraft.network.PacketThreadUtil$1.run(PacketThreadUtil.java:22) ~[hv$1.class:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_51]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_51]
+	at net.minecraft.util.Util.func_181617_a(Util.java:47) ~[h.class:?]
+	... 5 more*/
+
+
+
+
+
+
+
+
+
     /*
     private static String testDim;
     private static Random rand = new Random();
