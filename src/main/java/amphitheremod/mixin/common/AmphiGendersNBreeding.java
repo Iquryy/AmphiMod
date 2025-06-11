@@ -27,7 +27,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
-@Mixin(EntityAmphithere.class)
+@Mixin(value = EntityAmphithere.class)
 public abstract class AmphiGendersNBreeding extends EntityAnimal implements IAmphithereData {
     @Shadow public abstract int getVariant();
 
@@ -70,6 +70,11 @@ public abstract class AmphiGendersNBreeding extends EntityAnimal implements IAmp
             this.getDataManager().set(DATA_GENDER, this.getRNG().nextBoolean());
     }
 
+    @Unique int amphiMod$var1;
+    @Unique int amphiMod$var2;
+    @Unique int amphiMod$dimension;
+    @Unique List<Integer> amphiMod$amphiBreed;
+
     @Override
     public boolean canMateWith(@Nonnull EntityAnimal otherAnimal) {
         if(!super.canMateWith(otherAnimal)) return false;
@@ -81,17 +86,19 @@ public abstract class AmphiGendersNBreeding extends EntityAnimal implements IAmp
         AmphiGendersNBreeding amphi2 = (AmphiGendersNBreeding) otherAnimal;
 
         if(amphi1.getGender() != amphi2.getGender()) {
-            int var1 = amphi1.getVariant();
-            int var2 = amphi2.getVariant();
+            amphiMod$var1 = amphi1.getVariant();
+            amphiMod$var2 = amphi2.getVariant();
+            amphiMod$dimension = amphi1.world.getWorldType().getId();
 
-            List<Integer> amphiBreed = Arrays.asList(var1, var2);
-            Collections.sort(amphiBreed);
+            amphiMod$amphiBreed = Arrays.asList(amphiMod$var1, amphiMod$var2);
+            Collections.sort(amphiMod$amphiBreed);
 
-            System.out.println("male + female: " + amphiBreed);
+            System.out.println("male + female: " + amphiMod$amphiBreed);
             System.out.println("Outpust custom amphi plz send it once");
             System.out.println();
-            System.out.println("1. amphio type:" + amphiMod$getAmphiEnum(amphiBreed.get(0)));
-            System.out.println("2. amphio type:" + amphiMod$getAmphiEnum(amphiBreed.get(1))); // also works :d
+            System.out.println("1. amphio type:" + amphiMod$getAmphiEnum(amphiMod$amphiBreed.get(0)));
+            System.out.println("2. amphio type:" + amphiMod$getAmphiEnum(amphiMod$amphiBreed.get(1))); // also works :d
+            System.out.println("dimension: " + amphiMod$dimension);
         }
 
         return this.getDataManager().get(DATA_GENDER) != otherAnimal.getDataManager().get(DATA_GENDER);
@@ -103,6 +110,6 @@ public abstract class AmphiGendersNBreeding extends EntityAnimal implements IAmp
 
     @WrapOperation(method = "createChild", at = @At(value = "INVOKE", target = "Lcom/github/alexthe666/iceandfire/entity/EntityAmphithere;setVariant(I)V", remap = false))
     public void amphiMod_createChildWithOtherVariants(EntityAmphithere amphithere, int variant, Operation<Void> original) {
-        original.call(amphithere, 22); // testing which worked
+        original.call(amphithere, 21);
     }
 }

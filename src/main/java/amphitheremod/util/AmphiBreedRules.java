@@ -1,6 +1,6 @@
 package amphitheremod.util;
 
-public class AmphiBreedRules {/*
+public class AmphiBreedRules {
     Enum var1;
     Enum var2;
     Enum varOut;
@@ -15,8 +15,8 @@ public class AmphiBreedRules {/*
         this.dim = dim;
     }
 
-    EnumAmphiType isValid(Enum var1, Enum var2, Enum varOut, int weight, int dim) {
-    }*/
+    void isValid(Enum var1, Enum var2, Enum varOut, int weight, int dim) {
+    }
 }
 
     /*
