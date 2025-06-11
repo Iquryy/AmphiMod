@@ -34,10 +34,10 @@ public abstract class AmphiVariants {
         original.call(amphithere, amphimod$rollVariant(amphithere.getRNG(), false));
     }
 
-    @WrapOperation(method = "createChild", at = @At(value = "INVOKE", target = "Lcom/github/alexthe666/iceandfire/entity/EntityAmphithere;setVariant(I)V", remap = false))
+    /*@WrapOperation(method = "createChild", at = @At(value = "INVOKE", target = "Lcom/github/alexthe666/iceandfire/entity/EntityAmphithere;setVariant(I)V", remap = false))
     public void amphiMod_createChildWithOtherVariants(EntityAmphithere amphithere, int variant, Operation<Void> original) {
         original.call(amphithere, amphimod$rollVariant(amphithere.getRNG(), true));
-    }
+    }*/
 
     @Unique private static int amphimod$rollVariant(Random rand, boolean isFromBreed) {
         if (rand.nextInt(100) == 0 && isFromBreed) return RAINBOW;

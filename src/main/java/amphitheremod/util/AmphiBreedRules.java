@@ -1,22 +1,22 @@
 package amphitheremod.util;
 
-public class AmphiBreedRules {
+public class AmphiBreedRules {/*
     Enum var1;
     Enum var2;
     Enum varOut;
-    int weight = -1;
-    int dim = -1;
+    int weight;
+    int dim;
+
+    AmphiBreedRules(Enum var1, Enum var2, Enum varOut, int weight, int dim){
+        this.var1 = var1;
+        this.var2 = var2;
+        this.varOut = varOut;
+        this.weight = weight;
+        this.dim = dim;
+    }
 
     EnumAmphiType isValid(Enum var1, Enum var2, Enum varOut, int weight, int dim) {
-        if (var1 != null && var2 != null && varOut != null && weight != -1 && dim != -1)
-            ChooseVariant(var1, var2, varOut, weight, dim);
-        else
-            return EnumAmphiType.GREEN;
-        return EnumAmphiType.GREEN;
-    }
-
-    void ChooseVariant(Enum var1, Enum var2, Enum varOut, int weight, int dim){
-    }
+    }*/
 }
 
     /*
@@ -87,4 +87,21 @@ public class AmphiBreedRules {
             var = 69;
         return var;
     }
+    |
+
+
+        AmphiGenders amphi1 = this;
+        AmphiGenders amphi2 = (AmphiGenders) otherAnimal;
+
+        if(amphi1.getGender() != amphi2.getGender()) {
+            int var1 = amphi1.getVariant();
+            int var2 = amphi2.getVariant();
+
+            List<Integer> amphiBreed = Arrays.asList(var1, var2);
+            Collections.sort(amphiBreed);
+
+            System.out.println("male + female: " + amphiBreed);
+            System.out.println("Outpust custom amphi plz send it once");
+        }
+
     */
