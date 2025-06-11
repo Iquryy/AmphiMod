@@ -21,10 +21,10 @@ public class AmphithereMod {
     public static final String NAME = "Amphithere Mod";
     public static final Logger LOGGER = LogManager.getLogger();
 
-    /*@Mod.EventHandler
+    @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
         if (FMLLaunchHandler.side() == Side.CLIENT) {
             MinecraftForge.EVENT_BUS.register(new ColorizedEntityRender());
         }
-    }*/
+    }
 }

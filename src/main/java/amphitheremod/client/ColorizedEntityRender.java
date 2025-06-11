@@ -1,9 +1,8 @@
 package amphitheremod.client;
 
+import amphitheremod.util.EnumCustomColor;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.passive.EntitySheep;
-import net.minecraft.item.EnumDyeColor;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -12,7 +11,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class ColorizedEntityRender {
-    private static final EnumDyeColor[] COLORS = new EnumDyeColor[]{EnumDyeColor.RED, EnumDyeColor.ORANGE, EnumDyeColor.YELLOW, EnumDyeColor.LIME, EnumDyeColor.LIGHT_BLUE, EnumDyeColor.MAGENTA, EnumDyeColor.PINK, EnumDyeColor.WHITE};
+    private static final EnumCustomColor[] COLORS = new EnumCustomColor[]{EnumCustomColor.WHITE, EnumCustomColor.RED, EnumCustomColor.ORANGE, EnumCustomColor.YELLOW, EnumCustomColor.LIME, EnumCustomColor.CYAN, EnumCustomColor.BLUE, EnumCustomColor.DEEP_BLUE, EnumCustomColor.PURPLE, EnumCustomColor.PINK, EnumCustomColor.MAGENTA, EnumCustomColor.BLACK};
     private boolean isCustomColored = false;
 
     @SubscribeEvent
@@ -35,8 +34,8 @@ public class ColorizedEntityRender {
         int colorIndex = (ticks / 25 + entityId) % COLORS.length;
         int nextColorIndex = (colorIndex + 1) % COLORS.length;
         float interpolationFactor = (float) (ticks % 25) / 25.0F;
-        float[] color1 = EntitySheep.getDyeRgb(COLORS[colorIndex]);
-        float[] color2 = EntitySheep.getDyeRgb(COLORS[nextColorIndex]);
+        float[] color1 = EnumCustomColor.getColorRgb(COLORS[colorIndex]);
+        float[] color2 = EnumCustomColor.getColorRgb(COLORS[nextColorIndex]);
         applyInterpolatedColor(color1, color2, interpolationFactor);
     }
 

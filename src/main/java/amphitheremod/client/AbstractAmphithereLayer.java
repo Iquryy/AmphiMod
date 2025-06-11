@@ -40,13 +40,6 @@ public abstract class AbstractAmphithereLayer implements LayerRenderer<EntityAmp
         GlStateManager.popMatrix();
     }
 
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        if (FMLLaunchHandler.side() == Side.CLIENT) {
-            MinecraftForge.EVENT_BUS.register(new ColorizedEntityRender());
-        }
-    }
-
     @Override public boolean shouldCombineTextures() {
         return false;
     }
