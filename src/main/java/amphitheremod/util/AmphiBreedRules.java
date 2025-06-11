@@ -1,29 +1,55 @@
 package amphitheremod.util;
 
 public class AmphiBreedRules {
-    Enum var1;
-    Enum var2;
-    Enum varOut;
-    int weight;
-    int dim;
-
     // yea idk how to do this id assume its something along like (enum.blue + enum.red = enum.purple) but I got 0 vlue how to do that at all
     // I also wanted to do something along
     /*
     (enum.blue + enum.red = enum.purple or enum.gem_purple)
     same with every other amphi and then leave the black, white, radish as last roll of weight if none of the previous choosen and then all the weights aaaaaaaaaa
-    my  brain here just goes https://shorturl.at/CvD8M
+    my  brain thinking about it  just goes https://shorturl.at/CvD8M
     */
 
-    AmphiBreedRules(Enum var1, Enum var2, Enum varOut, int weight, int dim){
-        this.var1 = var1;
-        this.var2 = var2;
-        this.varOut = varOut;
-        this.weight = weight;
-        this.dim = dim;
+    public static  int isValid(EnumAmphiType var1, EnumAmphiType var2, int dim) {
+        int var = 0;
+        if(var1 != null && var2 != null){
+            var = CheckDimension(var1, var2, dim);
+        }
+         return var;
     }
 
-    void isValid(Enum var1, Enum var2, Enum varOut, int weight, int dim) {
+    static int CheckDimension(EnumAmphiType var1, EnumAmphiType var2, int dim) {
+        // 0 = overworld
+        // -1 nether
+        // 1 = end
+        int var = 0;
+        switch(dim) {
+            case 0:
+                System.out.println("overworld");
+                var = Overworld(var1, var2);
+                break;
+            case -1:
+                System.out.println("nether");
+                var =  Nether(var1, var2);
+                break;
+            case 1:
+                System.out.println("end");
+                var =  End(var1, var2);
+                break;
+        }
+        return var;
+    }
+
+    // just test placeholders return 20;   return 21;   return 22;
+    static int Overworld(EnumAmphiType var1, EnumAmphiType var2){
+        return 20;
+    }
+
+    static int Nether(EnumAmphiType var1, EnumAmphiType var2){
+        return 21;
+    }
+
+    static int End(EnumAmphiType var1, EnumAmphiType var2){
+        return 22;
     }
 }
 
