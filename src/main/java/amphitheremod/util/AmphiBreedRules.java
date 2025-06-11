@@ -7,6 +7,14 @@ public class AmphiBreedRules {
     int weight;
     int dim;
 
+    // yea idk how to do this id assume its something along like (enum.blue + enum.red = enum.purple) but I got 0 vlue how to do that at all
+    // I also wanted to do something along
+    /*
+    (enum.blue + enum.red = enum.purple or enum.gem_purple)
+    same with every other amphi and then leave the black, white, radish as last roll of weight if none of the previous choosen and then all the weights aaaaaaaaaa
+    my  brain here just goes https://shorturl.at/CvD8M
+    */
+
     AmphiBreedRules(Enum var1, Enum var2, Enum varOut, int weight, int dim){
         this.var1 = var1;
         this.var2 = var2;
