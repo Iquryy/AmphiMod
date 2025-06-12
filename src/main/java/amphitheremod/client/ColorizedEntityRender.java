@@ -9,33 +9,41 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.Objects;
+
 @SideOnly(Side.CLIENT)
 public class ColorizedEntityRender {
-    private static final EnumCustomColor[] COLORS = new EnumCustomColor[]{EnumCustomColor.WHITE, EnumCustomColor.RED, EnumCustomColor.ORANGE, EnumCustomColor.YELLOW, EnumCustomColor.LIME, EnumCustomColor.CYAN, EnumCustomColor.BLUE, EnumCustomColor.DEEP_BLUE, EnumCustomColor.PURPLE, EnumCustomColor.PINK, EnumCustomColor.MAGENTA, EnumCustomColor.BLACK};
+    private static final EnumCustomColor[] RAINBOW_COLORS = new EnumCustomColor[]{EnumCustomColor.WHITE, EnumCustomColor.RED, EnumCustomColor.ORANGE, EnumCustomColor.YELLOW, EnumCustomColor.LIME, EnumCustomColor.CYAN, EnumCustomColor.BLUE, EnumCustomColor.DEEP_BLUE, EnumCustomColor.PURPLE, EnumCustomColor.PINK, EnumCustomColor.MAGENTA, EnumCustomColor.BLACK};
+    private static final EnumCustomColor[] IQURY_COLORS = new EnumCustomColor[]{EnumCustomColor.LIME, EnumCustomColor.CYAN, EnumCustomColor.PURPLE, EnumCustomColor.CYAN, EnumCustomColor.PINK, EnumCustomColor.CYAN};
     private boolean isCustomColored = false;
 
     @SubscribeEvent
     public void onRenderLivingPre(RenderLivingEvent.Pre<EntityLivingBase> event) {
         EntityLivingBase entity = event.getEntity();
         isCustomColored = false;
-        String customName = TextFormatting.getTextWithoutFormattingCodes(entity.getName());
+        String customName = Objects.requireNonNull(TextFormatting.getTextWithoutFormattingCodes(entity.getName())).toLowerCase();
 
-        if(customName != null) {
-            if (customName.equals("rain")) {
+        switch (customName) {
+            case "rainbowedge":
                 isCustomColored = true;
-                applyBrightRainbowEffect(entity);
-            }
+                cycleColors(entity, RAINBOW_COLORS);
+                break;
+            case "iquredge":
+                isCustomColored = true;
+                cycleColors(entity, IQURY_COLORS);
+                break;
+            //case "nischhedge": ???
         }
     }
 
-    private void applyBrightRainbowEffect(EntityLivingBase entity) {
+    private void cycleColors(EntityLivingBase entity, EnumCustomColor[] cycleFrom){
         int ticks = entity.ticksExisted;
         int entityId = entity.getEntityId();
-        int colorIndex = (ticks / 25 + entityId) % COLORS.length;
-        int nextColorIndex = (colorIndex + 1) % COLORS.length;
+        int colorIndex = (ticks / 25 + entityId) % cycleFrom.length;
+        int nextColorIndex = (colorIndex + 1) % cycleFrom.length;
         float interpolationFactor = (float) (ticks % 25) / 25.0F;
-        float[] color1 = EnumCustomColor.getColorRgb(COLORS[colorIndex]);
-        float[] color2 = EnumCustomColor.getColorRgb(COLORS[nextColorIndex]);
+        float[] color1 = EnumCustomColor.getColorRgb(cycleFrom[colorIndex]);
+        float[] color2 = EnumCustomColor.getColorRgb(cycleFrom[nextColorIndex]);
         applyInterpolatedColor(color1, color2, interpolationFactor);
     }
 
