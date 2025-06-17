@@ -17,7 +17,7 @@ public class LayerAmphithereMouth extends AbstractAmphithereLayer {
     }
 
     @Override protected ResourceLocation getTextureToBind(EntityAmphithere amphithere) {
-        //if (EnumAmphiType.nameIsSkeleton(amphithere.getCustomNameTag())) return EMPTY;
+        if (EnumAmphiType.nameIsSkeleton(amphithere.getCustomNameTag())) return EMPTY;
         if (amphithere.getVariant() == EnumAmphiType.SKELETON.ordinal()) return EMPTY;
         if (amphithere.getVariant() == EnumAmphiType.WITHER_SKELETON.ordinal()) return EMPTY;
 

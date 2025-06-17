@@ -1,13 +1,13 @@
 package amphitheremod.util;
 
-public class AmphiBreedRules {
+public class AmphiBreedRules {/*
     // yea idk how to do this id assume its something along like (enum.blue + enum.red = enum.purple) but I got 0 vlue how to do that at all
     // I also wanted to do something along
-    /*
+
     (enum.blue + enum.red = enum.purple or enum.gem_purple)
     same with every other amphi and then leave the black, white, radish as last roll of weight if none of the previous choosen and then all the weights aaaaaaaaaa
     my  brain thinking about it  just goes https://shorturl.at/CvD8M
-    */
+
 
     public static  int isValid(EnumAmphiType var1, EnumAmphiType var2, int dim) {
         int var = 0;
@@ -51,7 +51,8 @@ public class AmphiBreedRules {
     static int End(EnumAmphiType var1, EnumAmphiType var2){
         return 22;
     }
-}
+*/}
+
 
 /*java.util.concurrent.ExecutionException: java.lang.NullPointerException
 	at java.util.concurrent.FutureTask.report(FutureTask.java:122) ~[?:1.8.0_51]
@@ -225,3 +226,4 @@ Caused by: java.lang.NullPointerException
         }
 
     */
+

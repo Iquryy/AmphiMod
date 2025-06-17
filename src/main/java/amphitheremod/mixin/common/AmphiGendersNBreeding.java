@@ -112,8 +112,8 @@ public abstract class AmphiGendersNBreeding extends EntityAnimal implements IAmp
         return EnumAmphiType.values()[var];
     }
 
-    @WrapOperation(method = "createChild", at = @At(value = "INVOKE", target = "Lcom/github/alexthe666/iceandfire/entity/EntityAmphithere;setVariant(I)V", remap = false))
+    /*@WrapOperation(method = "createChild", at = @At(value = "INVOKE", target = "Lcom/github/alexthe666/iceandfire/entity/EntityAmphithere;setVariant(I)V", remap = false))
     public void amphiMod_createChildWithOtherVariants(EntityAmphithere amphithere, int variant, Operation<Void> original) {
         original.call(amphithere, AmphiBreedRules.isValid(amphiMod$amphiBreedEnum.get(0), amphiMod$amphiBreedEnum.get(1), amphiMod$dimension));
-    }
+    }*/
 }

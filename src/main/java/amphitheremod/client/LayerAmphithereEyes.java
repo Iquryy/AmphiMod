@@ -21,7 +21,7 @@ public class LayerAmphithereEyes extends AbstractAmphithereLayer {
 
     @Override protected ResourceLocation getTextureToBind(EntityAmphithere amphithere) {
         if (amphithere.isBlinking()) return null;
-        //if (EnumAmphiType.nameIsSkeleton(amphithere.getCustomNameTag())) return null;
+        if (EnumAmphiType.nameIsSkeleton(amphithere.getCustomNameTag())) return null;
 
         int amphiVariant = amphithere.getVariant();
         EnumAmphiType.Eyes eyes = EnumAmphiType.Eyes.NORMAL;
