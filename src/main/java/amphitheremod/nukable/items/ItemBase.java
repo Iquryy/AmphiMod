@@ -8,8 +8,8 @@ import net.minecraft.item.Item;
 
 public class ItemBase extends Item implements IHasModels {
     public ItemBase(String name, CreativeTabs creativeTab) {
-        this.setRegistryName(AmphithereMod.MODID, name);
-        this.setTranslationKey(AmphithereMod.MODID + "." + name);
+        this.setRegistryName(name);
+        this.setTranslationKey(name);
         this.setCreativeTab(creativeTab);
         ModItems.ITEMS.add(this);
     }
